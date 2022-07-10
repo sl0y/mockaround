@@ -1,0 +1,52 @@
+{
+  "name": "@sloy/mockaround",
+  "version": "0.0.0+2",
+  "description": "",
+  "type": "module",
+  "main": "./src/index.js",
+  "repository": "",
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "esl:once": "eslint --ignore-path .gitignore ./",
+    "esl:wtch": "nodemon --exec eslint --ignore-path .gitignore ./",
+    "esl:ofix": "eslint --ignore-path .gitignore --fix ./",
+    "esl:wfix": "nodemon --exec eslint --ignore-path .gitignore --fix ./",
+    "jst:ocvr": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "jst:wcvr": "NODE_NO_WARNINGS=1 NODE_OPTIONS=--experimental-vm-modules jest --watch-all --coverage",
+    "jst:once": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "jst:wtch": "NODE_NO_WARNINGS=1 NODE_OPTIONS=--experimental-vm-modules jest --watch",
+    "smp:once": "eslint -c index.js ./doc/samples",
+    "smp:wtch": "nodemon --exec npm run smp:once",
+    "srv:covr": "npx http-server ./coverage/lcov-report/ -c-1 -p 0 ",
+    "ncu:chck": "npx npm-check-updates",
+    "ncu:cdoc": "npx npm-check-updates --doctor",
+    "ncu:runu": "npx npm-check-updates -u",
+    "ncu:rund": "npx npm-check-updates -u --doctor",
+    "ncu:runm": "npx npm-check-updates -u --target minor",
+    "ncu:runp": "npx npm-check-updates -u --target patch",
+    "prepare": "husky install",
+    "test": "npm run jst:once",
+    "start": "npm run jst:wtch"
+  },
+  "devDependencies": {
+    "@jest/globals": "^28.1.2",
+    "@me5on/dv": "^0.0.3",
+    "@sloy/eslint-config-import": "^0.0.1",
+    "@sloy/eslint-config-recommended": "^0.1.1",
+    "@sloy/jest-setup": "^0.0.1",
+    "eslint": "^8.19.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "http-server": "^14.1.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.19",
+    "npm-check-updates": "^15.2.6"
+  },
+  "dependencies": {}
+}

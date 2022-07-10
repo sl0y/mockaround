@@ -1,0 +1,42 @@
+{
+
+  "parserOptions": {
+    "sourceType": "module"
+  },
+
+  "extends": [
+    "@sloy/eslint-config-recommended",
+    "@sloy/eslint-config-import"
+  ],
+
+  "plugins": [
+    "simple-import-sort",
+    "import"
+  ],
+
+  "globals": {
+    "Array": false,
+    "BigInt": false,
+    "Boolean": false,
+    "Date": false,
+    "Error": false,
+    "Function": false,
+    "JSON": false,
+    "Map": false,
+    "Math": false,
+    "Number": false,
+    "Object": false,
+    "Promise": false,
+    "Proxy": false,
+    "Reflect": false,
+    "RegExp": false,
+    "Set": false,
+    "String": false,
+    "Symbol": false
+  },
+
+  "rules": {
+    
+  }
+
+}
