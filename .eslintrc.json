@@ -32,11 +32,12 @@
     "RegExp": false,
     "Set": false,
     "String": false,
-    "Symbol": false
+    "Symbol": false,
+    "WeakMap": false
   },
 
   "rules": {
-    
+
   }
 
 }

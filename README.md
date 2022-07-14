@@ -1,2 +1,3 @@
+![](doc/icon.png)
 
-# @SLOY/MOCKAROUND
+# MOCKAROUND
