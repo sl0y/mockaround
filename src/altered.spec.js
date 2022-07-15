@@ -6,7 +6,7 @@ const ident = $ => $;
 
 
 // noinspection SpellCheckingInspection
-describe('mockaround', () => {
+describe('mockaround', () => {// eslint-disable-line max-lines-per-function
 
     it.each([
         {NODE_ENV: 'test'},

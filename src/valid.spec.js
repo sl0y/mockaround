@@ -2,9 +2,8 @@ import {describe, expect, it, jest} from '@jest/globals';
 import ma from './index.js';
 
 
-
 // noinspection SpellCheckingInspection
-describe('mockaround', () => {
+describe('mockaround', () => {// eslint-disable-line max-lines-per-function
 
     it(
         'returns wrapped function and sets the mock',
