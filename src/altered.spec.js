@@ -43,7 +43,7 @@ describe('mockaround', () => {// eslint-disable-line max-lines-per-function
             const mock = {[ma.ENV]: env, rp: jest.fn(ident)};
             const wrapper = ma(mock, fn);
 
-            expect(ma.MAP.get(fn)).toBe(void (1));
+            expect(ma.MAP.get(fn)).toBeInstanceOf(Map);
             expect(wrapper(obj)).toBe(obj);
 
         },

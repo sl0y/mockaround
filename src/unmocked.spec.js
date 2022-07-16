@@ -54,12 +54,27 @@ describe('mockaround', () => {
             const wrapper2 = ma(mock2, wrapper1);
 
             expect(wrapper2).not.toBe(wrapper1);
-            
+
             expect(ma.MAP.get(fn).get(wrapper1.wid)).toBe(mock2);
             expect(ma.MAP.get(fn).get(wrapper2.wid)).toBe(mock2);
 
             expect(wrapper2('y')).toBe(2);
             expect(wrapper2.original).toBe(fn);
+
+        },
+    );
+
+    it(
+        'injects fn properly when no tests are running',
+        () => {
+
+            const mockOutsideTest = {[ma.ENV]: {}, rp: $ => $};
+
+            const embeddedFn = (arg, mock = null) => (mock?.rp)?.(arg) ?? 'not injected';
+            const exportedFn = ma(mockOutsideTest, embeddedFn);
+
+            expect(embeddedFn('whatever')).toBe('not injected');
+            expect(exportedFn('injected')).toBe('injected');
 
         },
     );

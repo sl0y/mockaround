@@ -20,14 +20,14 @@ describe('mockaround', () => {
 
 
     it(
-        'returns the same fn if disabled through environment',
+        'returns wrapper all the same if disabled through environment',
         () => {
             global.process.env.JEST_WORKER_ID = '';
             global.process.env.NODE_ENV = 'not test';
 
             const actual = ma({}, noop);
 
-            expect(actual).toBe(noop);
+            expect(actual?.original).toBe(noop);
         },
     );
 

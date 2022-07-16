@@ -10,11 +10,7 @@ const mockaround = (
     (mock, fn) => {
 
         const env = (mock?.[ENV] ?? process?.env ?? {});
-        const wid = env.JEST_WORKER_ID;
-
-        if ('test' !== env.NODE_ENV && !wid) {
-            return fn;
-        }
+        const wid = String(env.JEST_WORKER_ID ?? '');
 
         while ('function' === typeof fn?.[OG]) {
             fn = fn?.[OG];
