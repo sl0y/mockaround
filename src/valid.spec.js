@@ -2,6 +2,15 @@ import {describe, expect, it, jest} from '@jest/globals';
 import ma from './index.js';
 
 
+const sortedOwnKeys = (
+
+    $ => $
+        ? Object.getOwnPropertyNames($).sort()
+        : []
+
+);
+
+
 // noinspection SpellCheckingInspection
 describe('mockaround', () => {// eslint-disable-line max-lines-per-function
 
@@ -46,6 +55,22 @@ describe('mockaround', () => {// eslint-disable-line max-lines-per-function
             expect(rp).toHaveBeenCalledTimes(1);
             expect(rp).toHaveBeenCalledWith(obj);
 
+        },
+    );
+
+    it(
+        'returns the wrapper with correct fields',
+        () => {
+            const mockedOne = $ => $;
+            const wrapper = ma({}, mockedOne);
+            const keys = ['name', 'length', 'original', 'unmock', 'wid'].sort();
+
+            expect(sortedOwnKeys(wrapper)).toEqual(keys);
+            expect(wrapper.name).toBe(mockedOne.name);
+            expect(wrapper.length).toBe(mockedOne.length);
+            expect(wrapper.original).toBe(mockedOne);
+            expect(typeof wrapper.unmock).toBe('function');
+            expect(wrapper.wid).toBe(process.env.JEST_WORKER_ID);
         },
     );
 
